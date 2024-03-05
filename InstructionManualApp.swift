@@ -61,8 +61,8 @@ struct InstructionManualApp: App {
             WindowGroup(id: model.robotCleanerMaintenanceDustBoxRealityAreaId) {
                 RobotCleanerMaintenanceDustBoxRealityArea()
             }
-//            .defaultSize(width: 800, height: 900, depth: 1200)
-            .windowResizability(.contentSize)
+            .windowStyle(.volumetric)
+            .defaultSize(width: 800, height: 900, depth: 1200)
         }
         
         ImmersiveSpace(id: model.immersiveAreaId) {

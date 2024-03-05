@@ -35,17 +35,35 @@ struct RobotCleanerMaintenanceArea: View {
         .ornament(attachmentAnchor: .scene(_: .bottom)) {
             switch selectedItem {
             case .term:
-                Text("")
-            case .dustBox:
                 Button(action: {
-                    openWindow(id: model.robotCleanerMaintenanceDustBoxRealityAreaId)
+                    openWindow(id: model.robotCleanerContentAreaId)
                     dismissWindow(id: model.robotCleanerMaintenanceId)
                 }) {
-                    Text("View in RealityView")
+                    Text("Back to Home")
                 }
-                    .glassBackgroundEffect()
+            case .dustBox:
+                HStack {
+                    Button(action: {
+                        openWindow(id: model.robotCleanerContentAreaId)
+                        dismissWindow(id: model.robotCleanerMaintenanceId)
+                    }) {
+                        Text("Back to Home")
+                    }
+                    Button(action: {
+                        openWindow(id: model.robotCleanerMaintenanceDustBoxRealityAreaId)
+                        dismissWindow(id: model.robotCleanerMaintenanceId)
+                    }) {
+                        Text("View in RealityView")
+                    }
+                        .glassBackgroundEffect()
+                }
             case .filter:
-                Text("filter")
+                Button(action: {
+                    openWindow(id: model.robotCleanerContentAreaId)
+                    dismissWindow(id: model.robotCleanerMaintenanceId)
+                }) {
+                    Text("Back to Home")
+                }
             case nil:
                 Text("")
             }

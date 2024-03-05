@@ -64,10 +64,12 @@ struct RobotCleanerMaintenanceDustBoxRealityArea: View {
                 VStack {
                     Text(stepDescriptions[currentStepIndex])
                     Button(action: {
-                        if currentStepIndex < stepDurations.count - 1 {
+//                        if currentStepIndex < stepDurations.count - 1 {
                             currentStepIndex += 1
+//                        }
+                        if (currentStepIndex < stepDurations.count) {
+                            playAnimation(for: stepDurations[currentStepIndex])
                         }
-                        playAnimation(for: stepDurations[currentStepIndex])
                     }) {
                         Text("Next Step")
                     }
